@@ -1,0 +1,25 @@
+name: Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    name: Send Tweet
+    steps:
+      - name: Send Tweet
+        uses: or13/twitter-api-actions@v0.0.1
+        id: tweet
+        with:
+          app-key: ${{ secrets.TWITTER_APP_KEY }}
+          app-secret: ${{ secrets.TWITTER_APP_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          tweet: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+      - name: Review the Summary
+        run: |-
+          echo "${{ steps.tweet.outputs.text }}"
