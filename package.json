@@ -1,0 +1,33 @@
+{
+  "name": "twitter-api-actions",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt",
+    "test": "source .env && TWITTER_APP_KEY=$TWITTER_APP_KEY TWITTER_APP_SECRET=$TWITTER_APP_SECRET TWITTER_ACCESS_TOKEN=$TWITTER_ACCESS_TOKEN TWITTER_ACCESS_TOKEN_SECRET=$TWITTER_ACCESS_TOKEN_SECRET jest",
+    "prerelease": "npm run build",
+    "release": "npm version patch && git add ./package.json",
+    "postrelease": "git push --tags",
+    "shove": "npm run build; git add -A; git commit -m ':rocket:'; git push origin main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OR13/twitter-api-actions.git"
+  },
+  "keywords": [],
+  "author": "Orie Steele",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/OR13/twitter-api-actions/issues"
+  },
+  "homepage": "https://github.com/OR13/twitter-api-actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "twitter-api-v2": "^1.12.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.4",
+    "jest": "^27.5.1"
+  }
+}

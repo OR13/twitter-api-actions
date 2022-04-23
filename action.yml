@@ -1,0 +1,40 @@
+name: "Twitter API Actions"
+description: "Access Twitter via https://github.com/PLhery/node-twitter-api-v2."
+inputs:
+  app-key:
+    description: |
+      Twitter App Key
+      See: https://github.com/PLhery/node-twitter-api-v2/blob/master/doc/basics.md#create-a-client
+    required: true
+
+  app-secret:
+    description: |
+      Twitter App Secret
+      See: https://github.com/PLhery/node-twitter-api-v2/blob/master/doc/basics.md#create-a-client
+    required: true
+
+  access-token:
+    description: |
+      Twitter personal access token
+      See: https://github.com/PLhery/node-twitter-api-v2/blob/master/doc/basics.md#create-a-client
+    required: true
+
+  access-secret:
+    description: |
+      Twitter personal access secret
+      See: https://github.com/PLhery/node-twitter-api-v2/blob/master/doc/basics.md#create-a-client
+    required: true
+
+  tweet:
+    description: |
+      Tweet to send
+    required: true
+
+outputs:
+  json:
+    description: "The output in as json."
+  text:
+    description: "The output in as text."
+runs:
+  using: "node16"
+  main: "dist/index.js"
