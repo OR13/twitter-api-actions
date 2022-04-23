@@ -11,7 +11,7 @@ jobs:
     name: Send Tweet
     steps:
       - name: Send Tweet
-        uses: or13/twitter-api-actions@v0.0.1
+        uses: or13/twitter-api-actions@v0.0.2
         id: tweet
         with:
           app-key: ${{ secrets.TWITTER_APP_KEY }}
